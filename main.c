@@ -1,18 +1,7 @@
 #include <stdio.h>
 
-int main() {
-    char operador;
-    double num1, num2, resultado;
-
-    // Solicita ao usuário que insira a operação desejada
-    printf("Digite a operacao (+, -, *, /): ");
-    scanf("%c", &operador);
-
-    // Solicita ao usuário que insira dois números
-    printf("Digite dois numeros: ");
-    scanf("%lf %lf", &num1, &num2);
-
-    // Realiza a operação selecionada
+void calcular(int num1, int num2, char operador){
+    int resultado = 0;
     switch (operador) {
         case '+':
             resultado = num1 + num2;
@@ -36,6 +25,21 @@ int main() {
             printf("Operador invalido.\n");
             return 1;  // Retorna um código de erro
     }
+}
+
+int main() {
+    char operador;
+    double num1, num2, resultado;
+
+    // Solicita ao usuário que insira a operação desejada
+    printf("Digite a operacao (+, -, *, /): ");
+    scanf("%c", &operador);
+
+    // Solicita ao usuário que insira dois números
+    printf("Digite dois numeros: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    calcular(num1,num2,operador);
 
     // Exibe o resultado
     printf("Resultado: %.2lf\n", resultado);
